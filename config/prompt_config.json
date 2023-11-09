@@ -1,0 +1,37 @@
+{
+    "requirement":{
+        "single_hint_prompt": "The following are a coding problem and a student's code submission. If the code is correct, reply \"Your answer is correct! Congradulations! \" only, If it's incorrect, given the problem description and testcases, provide a next-step hint for this student that ",
+        "multiple_hint_prompt": "Imaging you are a helpful Teaching assistant for CS1 class. The following are a coding problem and a student's code submission. If the code is correct, reply \"Your answer is correct! Congradulations! \" only, If it's incorrect, given the problem description and testcases, starting with encouraging words for each hint such as this is a really good start, provide one next-step hint (not empty) for each level for this student that "
+    },
+
+    "levels":{
+        "orientation":"points out the first error student needs to correct in one sentence without any other infomation.",
+        "instrumental":"describes the first error and the correct way to do it without providing specific solution. ",
+        "worked_example": "points out the first error student needs to correct in one sentence, and provide a similar example in different scenario and variable names in one sentence. The example code should be organized into html code block or in ace editor, and the explanation should be written as in-line comments of code. ALL of this hint should be written in code editor! ",
+        "bottom_out":"provides the correct version of code on the line(s) first error occured only. "
+    },
+    
+    "constraints":{
+        "length": "The response should be within 50 words. ",
+        "knowledge": "Do not use pandas dataframe. Students didn't learn with open syntax."
+    },
+
+    "format":{
+        "multi-level": "/n Please organize answers into the following format: [orientation]This is the response from orientation.[instrumental]This is the response from instrumental 2.[worked_example]This is the response from worked_example.[bottom_out]This is the response from bottom_out.",
+        "fence": "/n Please organize answers into the fence blocks: e.g. ###### orientation hint here ###### instrumental hint here ###### worked_example hint here ###### bottom_out hint here ######"
+    }, 
+
+    "error-types-layers":{
+        "inst": "The first step is to identify what is the error type of the current code. Choose the error type from the following and explain in one sentence: ",
+        "error-types":"debugging; incomplete implementation; conceptual"
+    }, 
+
+    "subgoal-layers":{
+        "inst": "Before generating hint, identify which subgoal the student is currently under, and which type of problem it is for the next step. The next-step hint should include at most one incompleted subgoal. Explain the subgoal in each type of hint: ",
+        "subgoals":"import csv; open csv file; read csv file into a 2-D list; looping over each line; looping over each column; string split; count hashtags"
+    }, 
+
+    "prior-knowledge": {
+        "data-extraction": "Here is a example code students learn in class: \nimport csv\nf = open(\"icecream.csv\", \"r\") \nreader = csv.reader(f)\ndata = list(reader)\nprint(data)\nf.close(). Students MUST import csv files and MUST NOT use readlines()"
+    }
+}

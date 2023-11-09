@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Compiler</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./static/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="row">
+        <!-- Sidebar -->
+        <div id="sidebar" class="col">
+            <h1 class="h2">Tiktok Hashtags</h1>
+            <div class="container mt-3" id="left-panel">
+                <div><div id="problemdescription"></div>
+<br>Example: 
+                </div>
+                <div class="example-i-o">
+                    <b>Input:</b><br> A csv file: top10videos.csv <br><br>
+                    <b>Output:</b><br> {'#dance': 9, '#viral': 8, '#trending': 3, '#party': 2, '#hiphop': 2, '#duet': 2, '#moves': 2, '#street': 2, '#classic': 2, '#latin': 2, '#salsa': 2, '#beats': 2, '#electro': 1, '#swing': 1, '#fun': 1, '#summer': 1, '#challenge': 1, '#ballet': 1, '#dreams': 1, '#elegance': 1, '#streetdance': 1, '#revolution': 1, '#freestyle': 1, '#vibes': 1, '#fiesta': 1, '#hit': 1, '#groove': 1, '#night': 1, '#retro': 1, '#oldies': 1, '#throwback': 1, '#tapdance': 1, '#tunes': 1, '#rhythm': 1, '#tap': 1, '#urban': 1, '#citylife': 1, '#bollywood': 1, '#bash': 1, '#indian': 1, '#festive': 1, '#colorful': 1}
+                </div>
+        </div>
+    </div>
+
+        <!-- Content -->
+        <div class="col">
+            <!-- Your content goes here -->
+            
+            <button class="ml-auto" id="run" onclick="runCode()">Run</button>
+            <button class="ml-auto" id="submit" onclick="runCode()">Submit</button>
+            <div class="container-fluid">
+                    <div id="leftPane">
+                        <div id="editor" style="height: 300px; width: 700px;">file_path = 'coding_problems/tiktok/top10videos.csv'
+hashtag_count = {}
+print(hashtag_count)</div>
+                    </div>
+                    <div id="problem_info" >
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#output">Output</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#testcases">Test Cases</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#hints">Hints</a>
+                                </li>
+                            </ul>
+                        
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div id="output" class="container tab-pane active"><br>
+                                    <pre id="output"></pre>
+                                </div>
+                                <div id="testcases" class="container tab-pane fade"><br>
+                                    <div>
+                                        <b>Your Output:</b>
+                                        <div id="student-output"></div>
+                                    </div>
+                                    <div>
+                                        <b>Correct Output:</b>
+                                        <div id="correct-output">{'#dance': 9, '#viral': 8, '#trending': 3, '#party': 2, '#hiphop': 2, '#duet': 2, '#moves': 2, '#street': 2, '#classic': 2, '#latin': 2, '#salsa': 2, '#beats': 2, '#electro': 1, '#swing': 1, '#fun': 1, '#summer': 1, '#challenge': 1, '#ballet': 1, '#dreams': 1, '#elegance': 1, '#streetdance': 1, '#revolution': 1, '#freestyle': 1, '#vibes': 1, '#fiesta': 1, '#hit': 1, '#groove': 1, '#night': 1, '#retro': 1, '#oldies': 1, '#throwback': 1, '#tapdance': 1, '#tunes': 1, '#rhythm': 1, '#tap': 1, '#urban': 1, '#citylife': 1, '#bollywood': 1, '#bash': 1, '#indian': 1, '#festive': 1, '#colorful': 1}</div>
+                                    </div>
+                                </div>
+                                <div id="hints" class="container tab-pane fade"><br>
+                                    <div id="progressBarContainer" style="display:none;">
+                                        <div id="progressBar"></div>
+                                    </div>
+                                    <h5 id="hintType">Generate a hint for the next step: We provide three hints for each attempt.</h5>
+                                    <div id="hintOutput">
+                                        <div id="worked_example_editor" style="height: 200px; width: 700px;" class=" ace_editor ace_hidpi ace-tm"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <button class="col hint-button" onclick="getPrevHint()">Previous</button>
+                                        <button class="col hint-button" id="ask-hint" onclick="generateHint()">New Hint</button>
+                                        <button class="col hint-button" onclick="getNextHint()">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.11/split.min.js"></script>
+
+<script src="static/js/script.js"></script>
+
+
+
+</body>
+</html>

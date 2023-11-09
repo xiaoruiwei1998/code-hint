@@ -1,0 +1,11 @@
+author,videoID,videoTitle,Views,publishTime,duration,Hashtags,Likes,Shares,Comments,Music,Description
+JaneDoe,tv001,Electro Swing,150000,2023-01-15,3:50,"#electro,#swing,#dance,#trending,#viral,#party,#fun,#summer",70000,5500,5000,ElectroTunes,Join the electro swing party!
+JohnDance,tv002,Hip Hop Challenge,175000,2023-02-10,4:20,"#hiphop,#challenge,#dance,#viral,#duet,#moves,#street",80000,6000,5900,HipHopBeats,Show me your best hip-hop moves!
+LucyLu,tv003,Ballet Dreams,200000,2023-03-05,5:15,"#ballet,#dreams,#dance,#trending,#classic,#elegance",82000,6400,6200,ClassicWaltz,My ballet journey!
+MikeMoves,tv004,Street Dance Revolution,190000,2023-03-20,4:45,"#streetdance,#revolution,#moves,#freestyle,#viral,#duet",79000,6300,6100,StreetBeat,Taking street dance to the next level!
+AnnaGroove,tv005,Latin Vibes,165000,2023-04-10,3:30,"#latin,#vibes,#dance,#salsa,#trending",71000,5600,5200,LatinBeat,Feel the rhythm with me!
+DanceMaster,tv101,Salsa Fiesta,210000,2023-05-15,3:10,"#salsa,#fiesta,#latin,#dance,#hit,#viral,#groove,#night",105000,4500,6800,HotSalsa,Let's salsa all night!
+GroovyGal,tv102,Retro Dance,250000,2023-06-12,4:05,"#retro,#oldies,#dance,#viral,#party,#classic,#throwback",120000,4800,7100,RetroHits,Bringing back the golden era!
+StepKing,tv103,Tap Dance Tunes,180000,2023-07-10,3:45,"#tapdance,#tunes,#rhythm,#dance,#viral,#tap,#beats",90000,4600,6500,TapBeats,Tap along with me!
+HipsterHop,tv104,Urban Beats,230000,2023-08-15,4:20,"#urban,#beats,#hiphop,#dance,#street,#viral,#citylife",110000,4900,7000,UrbanSounds,Street dance like never before!
+TwirlTwist,tv105,Bollywood Bash,240000,2023-09-05,4:50,"#bollywood,#bash,#indian,#dance,#festive,#viral,#colorful",115000,5000,7200,BollywoodBeats,Dance to the Bollywood rhythm!

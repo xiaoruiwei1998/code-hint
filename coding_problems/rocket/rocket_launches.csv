@@ -1,0 +1,51 @@
+CompanyName,Time,Success,Cost (Million $),Payload Mass (kg),Orbit
+Blue Origin,2014-08-19 05:04:23,Failure,52.07,2630,GTO
+SpaceX,2009-04-12 11:39:17,Failure,89.96,1320,GTO
+Astra,2007-07-21 05:14:57,Failure,24.82,4984,GTO
+Rocket Lab,2009-03-18 08:37:44,Success,34.85,1821,HEO
+Relativity Space,2021-11-25 19:09:32,Failure,86.86,6061,HEO
+SpaceX,2020-01-07 21:45:40,Success,61.42,8834,GEO
+Astra,2022-12-03 04:14:38,Success,10.66,2081,GTO
+Blue Origin,2000-08-03 07:37:27,Success,77.28,6671,MEO
+Relativity Space,2010-10-01 01:26:13,Success,35.23,3901,LEO
+SpaceX,2006-05-21 11:52:24,Failure,68.2,6080,GTO
+SpaceX,2021-06-26 10:48:49,Failure,87.86,1467,HEO
+Astra,2022-01-23 19:38:13,Failure,32.42,2165,HEO
+Virgin Galactic,2009-01-06 14:49:43,Failure,17.07,5996,LEO
+Rocket Lab,2008-07-11 05:21:55,Success,32.09,911,LEO
+Blue Origin,2011-01-25 21:41:07,Failure,62.18,9473,GEO
+Relativity Space,2009-03-17 13:06:45,Success,53.47,8778,MEO
+Rocket Lab,2018-07-14 15:55:33,Failure,65.13,1030,SSO
+Rocket Lab,2019-02-20 00:53:49,Failure,64.84,6691,GTO
+Astra,2009-05-07 22:48:48,Failure,79.73,8347,MEO
+SpaceX,2010-05-27 13:28:47,Success,48.85,719,MEO
+SpaceX,2005-05-14 14:43:39,Failure,40.29,1830,HEO
+Rocket Lab,2000-02-08 01:38:27,Failure,36.53,3148,GTO
+Relativity Space,2022-01-04 16:08:52,Failure,61.04,4706,HEO
+Blue Origin,2016-01-27 00:30:35,Success,27.03,6155,MEO
+Rocket Lab,2018-07-03 05:07:03,Failure,61.44,9314,HEO
+Relativity Space,2010-10-22 22:00:18,Success,66.88,5147,LEO
+Virgin Galactic,2001-06-13 23:13:58,Failure,31.45,2514,MEO
+SpaceX,2022-01-31 20:28:41,Failure,35.3,640,MEO
+Astra,2016-01-21 15:48:19,Success,59.5,5491,LEO
+Blue Origin,2008-11-07 08:41:37,Failure,22.98,1308,GTO
+SpaceX,2011-04-15 13:18:07,Failure,89.81,3121,GEO
+Relativity Space,2010-10-12 04:25:07,Failure,75.56,2650,LEO
+SpaceX,2002-12-16 21:43:36,Success,66.66,8495,MEO
+Blue Origin,2011-04-06 16:29:39,Success,73.8,6472,HEO
+Rocket Lab,2007-06-23 08:00:08,Success,61.89,7193,LEO
+Rocket Lab,2020-05-13 07:15:53,Failure,80.09,878,HEO
+Relativity Space,2003-07-10 21:09:54,Failure,10.76,7297,GEO
+Virgin Galactic,2000-08-16 01:24:32,Failure,47.7,5745,GEO
+Relativity Space,2011-12-21 02:40:01,Failure,21.48,2263,GEO
+Rocket Lab,2011-12-20 10:36:54,Success,23.89,1336,GTO
+Blue Origin,2021-12-23 09:54:23,Failure,54.86,9156,GTO
+Virgin Galactic,2023-03-05 03:36:52,Failure,53.29,1032,MEO
+Rocket Lab,2008-03-13 19:38:37,Failure,14.08,9704,LEO
+Astra,2004-04-10 19:26:17,Failure,67.55,2625,GTO
+Astra,2009-05-02 01:56:48,Failure,50.77,5423,SSO
+Blue Origin,2010-04-13 07:08:02,Success,25.5,2122,MEO
+Blue Origin,2019-12-19 07:40:05,Failure,57.48,3818,GTO
+Virgin Galactic,2022-11-10 14:07:51,Failure,26.2,7870,MEO
+Blue Origin,2018-06-12 10:38:44,Failure,69.9,3867,GTO
+Rocket Lab,2001-03-21 12:07:54,Failure,63.2,7299,GEO
