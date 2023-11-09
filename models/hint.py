@@ -40,17 +40,23 @@ class Hint(object):
         self.constraints = ""
         for constraint in constraints:
             self.constraints += prompt_config['constraints'][constraint]
-        self.prompt = prompt_config['requirement'][requirement] + self.levels_desc + "\n Problem Description: \n" + problem_desc + "\n Input: \n" + input_data + "\n Expected: \n" + output_data + "\n Student's code: \n" + self.code + "\n Constraints: \n" + self.constraints + prompt_config['format'][format]
+        self.prompt = prompt_config['requirement'][requirement] \
+        + self.levels_desc \
+        + "\n Problem Description: \n" + problem_desc \
+        + "\n Input: \n" + input_data \
+        + "\n Expected Output: \n" + output_data \
+        + "\n Constraints: \n" + self.constraints \
+        + prompt_config['format'][format]
         self.example_user_prompt = example_user_prompt
         self.example_feedback = example_feedback
         self.hint = {level: "" for level in levels}
-
+        self.current_user_message = ""
         
     def generateGPTAnswer(self):
         openai.api_key = self.api_key
         messages = [
             {
-                # instruction
+                # instruction, problem information
                 "role": "system",
                 "content": self.prompt
             },
@@ -71,23 +77,7 @@ class Hint(object):
                 # code
                 "role": "user",
                 "content": self.code
-            },
-            {
-                # problem info (desc, input, output, test), instructional materials
-                "role": "system",
-                "content": prompt_config['layers']['inst']+prompt_config['layers']['subgoals']+prompt_config['layers']['types']
             }
-            
-            # {
-            #     # prompt
-            #     "role": "user",
-            #     "content": self.prompt
-            # }
-            
-            # {
-            #     "role": "user",
-            #     "content": self.prompt
-            # },
         ]
         response = openai.ChatCompletion.create(
         model=self.model,

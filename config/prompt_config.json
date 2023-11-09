@@ -5,7 +5,7 @@
     },
 
     "levels":{
-        "orientation":"points out the first error student needs to correct in one sentence without any other infomation.",
+        "orientation":"identifies what is the error [debugging; incomplete implementation; conceptual] type of the current code, which subgoal [import csv; open csv file; read csv file into a 2-D list; looping over each line; looping over each column; string split; count hashtags] the student is currently under, and provide the next step hint. The next-step hint should include at most one incompleted subgoal without any other infomation.",
         "instrumental":"describes the first error and the correct way to do it without providing specific solution. ",
         "worked_example": "points out the first error student needs to correct in one sentence, and provide a similar example in different scenario and variable names in one sentence. The example code should be organized into html code block or in ace editor, and the explanation should be written as in-line comments of code. ALL of this hint should be written in code editor! ",
         "bottom_out":"provides the correct version of code on the line(s) first error occured only. "

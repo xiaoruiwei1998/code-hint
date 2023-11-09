@@ -38,18 +38,34 @@ HipsterHop,tv104,Urban Beats,230000,2023-08-15,4:20,"#urban,#beats,#hiphop,#danc
 TwirlTwist,tv105,Bollywood Bash,240000,2023-09-05,4:50,"#bollywood,#bash,#indian,#dance,#festive,#viral,#colorful",115000,5000,7200,BollywoodBeats,Dance to the Bollywood rhythm!
 """
         self.output = "{'#dance': 9, '#viral': 8, '#trending': 3, '#party': 2, '#hiphop': 2, '#duet': 2, '#moves': 2, '#street': 2, '#classic': 2, '#latin': 2, '#salsa': 2, '#beats': 2, '#electro': 1, '#swing': 1, '#fun': 1, '#summer': 1, '#challenge': 1, '#ballet': 1, '#dreams': 1, '#elegance': 1, '#streetdance': 1, '#revolution': 1, '#freestyle': 1, '#vibes': 1, '#fiesta': 1, '#hit': 1, '#groove': 1, '#night': 1, '#retro': 1, '#oldies': 1, '#throwback': 1, '#tapdance': 1, '#tunes': 1, '#rhythm': 1, '#tap': 1, '#urban': 1, '#citylife': 1, '#bollywood': 1, '#bash': 1, '#indian': 1, '#festive': 1, '#colorful': 1}"
-        self.example_user_prompt = """file_path = 'coding_problems/tiktok/top10videos.csv'
+        self.example_user_prompt = """[example-code]
+file_path = 'coding_problems/tiktok/top10videos.csv'
 hashtag_count = {}
 import csv
-csvfile_path = 'coding_problems/icecream_menu.csv'
-with open(csvfile_path, 'r') as file:  # open file
+with open(file_path, 'r') as file:  # open file
     reader = csv.reader(file) # read file 
     data = list(reader) # store data to a list 
-    print(data) # print data to debug"""
-        self.example_feedback = """worked_example:
+    print(data) # print data to debug
+    [end-example-code]"""
+        self.example_feedback = """[example-feedback]
+        ###### This is a very good start, but your code is incompleted. You have successfully read csv file into a 2-D list, and your next step is to loop over the list. 
+        ###### You are on the right track! The next step to do is reading each row (1-D lists) from the data (a 2-D list), and you may want to use for-loop.
+        ###### Your code is a good start, and you might want to learn the next step from this example:
         for row in data: # data is a 2-d list, each item in data is an 1-d list
             print(row) # see the structure of each row
-            col_0 = row[0] # get the value on (row_0, col_0)"""
+            col_0 = row[0] # get the value on (row_0, col_0)
+        ###### Your code is a good start, and here we implemented the next step for you:
+file_path = 'coding_problems/tiktok/top10videos.csv'
+hashtag_count = {}
+import csv
+with open(file_path, 'r') as file:  # open file
+    reader = csv.reader(file) # read file 
+    data = list(reader) # store data to a list 
+    print(data) # print data to debug
+    for row in data[1]: # exclude the first line (column names). The data is a 2-d list, each item in data is an 1-d list
+        hashtags = row[6] # the 6th column stores hashtags
+        ######[end-example-feedback]"""
+        
             
     def get_problem(self):
         return json.dumps({"problem_desc":self.problem_desc, "code": self.code, "input": self.input, "output": self.output, "example_user_prompt": self.example_user_prompt, "example_feedback": self.example_feedback})
