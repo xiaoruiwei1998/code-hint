@@ -1,7 +1,7 @@
 {
     "gpt_config": 
         {
-            "api_key": "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",
-            "model": "gpt-4"
+            "api_key": "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",
+            "model": "gpt-4-1106-preview"
         }
 }

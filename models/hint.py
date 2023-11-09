@@ -83,9 +83,11 @@ class Hint(object):
         model=self.model,
         messages=messages
         )
-        raw_hints = response["choices"][0]['message']['content'].split("######")[1:]
-        raw_hints = [hint for hint in raw_hints if "hint here" not in hint] 
+        raw_hints = response["choices"][0]['message']['content']
         print(raw_hints)
+        raw_hints = raw_hints.split("######")[1:]
+        raw_hints = [hint for hint in raw_hints if "hint here" not in hint] 
+        
         self.hint = {
             "orientation": raw_hints[0].strip(),
             "instrumental": raw_hints[1].strip(),
