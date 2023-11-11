@@ -67,18 +67,16 @@ print(hashtag_count)</div>
                                     </div>
                                 </div>
                                 <div id="hints" class="container tab-pane fade"><br>
-                                    <div id="progressBarContainer" style="display:none;">
-                                        <div id="progressBar"></div>
-                                    </div>
                                     <h5 id="hintType">Generate a hint for the next step: We provide three hints for each attempt.</h5>
+                                    <div id="loadingSpinner" class="spinner" style="display:none;"></div>
                                     <div id="hintOutput">
                                         <div id="worked_example_editor" style="height: 200px; width: 700px;" class=" ace_editor ace_hidpi ace-tm"></div>
                                     </div>
 
                                     <div class="row">
-                                        <button class="col hint-button" onclick="getPrevHint()">Previous</button>
+                                        <button class="col hint-button" id="prev-hint" onclick="getPrevHint()">Previous</button>
                                         <button class="col hint-button" id="ask-hint" onclick="generateHint()">New Hint</button>
-                                        <button class="col hint-button" onclick="getNextHint()">Next</button>
+                                        <button class="col hint-button" id="next-hint" onclick="getNextHint()">Next</button>
                                     </div>
                                 </div>
                             </div>

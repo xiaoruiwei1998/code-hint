@@ -5,20 +5,20 @@
     },
 
     "levels":{
-        "orientation":"identifies what is the error [debugging; incomplete implementation; conceptual] type of the current code, which subgoal [import csv; open csv file; read csv file into a 2-D list; looping over each line; looping over each column; string split; count hashtags] the student is currently under, and provide the next step hint. The next-step hint should include at most one incompleted subgoal without any other infomation.",
-        "instrumental":"describes the first error and the correct way to do it without providing specific solution. ",
-        "worked_example": "points out the first error student needs to correct in one sentence, and provide a similar example in different scenario and variable names in one sentence. The example code should be organized into html code block or in ace editor, and the explanation should be written as in-line comments of code. ALL of this hint should be written in code editor! You must include python code in this step.",
-        "bottom_out":"provides the correct version of code on the line(s) first error occured only. You must include python code in this step."
+        "orientation":"in a teaching assistant's tone, identifies which subgoal [import csv; open csv file; read csv file into a 2-D list; looping over each line; looping over each column; string split; count hashtags] the student is currently under, and provide the next step hint. The next-step hint should include at most one incompleted subgoal without any other infomation. The response should be within 10-50 words. Do not list the errors and subgoals directly. ",
+        "instrumental":"describes the first error and the correct way to do it without providing specific solution.  The response should be within 10-50 words. ",
+        "worked_example": "points out the first error student needs to correct in one sentence, and provide a similar example in different scenario and variable names in one sentence. The example code should be organized into html code block or in ace editor, and the explanation should be written as in-line comments of code. ALL of this hint should be written in code editor! You must include python code in this step.  The response should be in natural language and within 10-50 words. ",
+        "bottom_out":"provides the correct version of code on the line(s) first error occured only. You must include python code in this step. The response should be within 10-50 words. "
     },
     
     "constraints":{
         "length": "The response should be within 50 words. ",
-        "knowledge": "Do not use pandas dataframe. Students didn't learn with open syntax."
+        "knowledge": "Do not use pandas dataframe. Students didn't learn with open syntax. Do not talk about the mechanism of the hints like Debugging; String split subgoal."
     },
 
     "format":{
         "multi-level": "/n Please organize answers into the following format: [orientation]This is the response from orientation.[instrumental]This is the response from instrumental 2.[worked_example]This is the response from worked_example.[bottom_out]This is the response from bottom_out.",
-        "fence": "/n Please organize answers into the fence blocks: e.g. ###### orientation hint here ###### instrumental hint here ###### worked_example hint here ###### bottom_out hint here ######"
+        "fence": "/n Please organize answers into the fence blocks: e.g. --------------------- orientation hint here --------------------- instrumental hint here --------------------- worked_example hint here --------------------- bottom_out hint here ---------------------"
     }, 
 
     "error-types-layers":{

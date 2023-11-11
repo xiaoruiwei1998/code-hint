@@ -81,11 +81,13 @@ class Hint(object):
         ]
         response = openai.ChatCompletion.create(
         model=self.model,
-        messages=messages
+        messages=messages,
+        seed=0,
+        temperature=0,
         )
         raw_hints = response["choices"][0]['message']['content']
         print(raw_hints)
-        raw_hints = raw_hints.split("######")[1:]
+        raw_hints = raw_hints.split("---------------------")[1:]
         raw_hints = [hint for hint in raw_hints if "hint here" not in hint] 
         
         self.hint = {

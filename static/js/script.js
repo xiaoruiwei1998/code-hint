@@ -55,7 +55,10 @@ function getProblem(idx) {
 }
 
 function generateHint() {
+    showSpinner();
     document.getElementById("ask-hint").disabled = true;
+    document.getElementById("prev-hint").disabled = true;
+    document.getElementById("next-hint").disabled = true;
     hint_index = 0;
     const code = document.getElementsByClassName('ace_text-layer')[0].textContent.replace("ה", "")
     const problemDesc = document.getElementById('problemdescription').textContent;
@@ -74,16 +77,18 @@ function generateHint() {
         document.getElementById('hintType').textContent = hint_types[hint_index];
         wrap_worked_example(hints_buffer[hint_types[hint_index]]);
         document.getElementById("ask-hint").disabled = false;
+        hideSpinner();
+        document.getElementById("next-hint").disabled = false;
     })
     .catch(error => {
         console.error('Error fetching hint:', error);
         document.getElementById("ask-hint").disabled = false;
     });
-
 }
 
 function getPrevHint() {
     hint_index = (hint_index + hint_types.length-1) % hint_types.length;
+    enablePrevNext(hint_index);
     document.getElementById('hintType').textContent = hint_types[hint_index];
     wrap_worked_example(hints_buffer[hint_types[hint_index]]);
     console.log(hints_buffer[hint_types[hint_index]]);
@@ -91,6 +96,7 @@ function getPrevHint() {
 
 function getNextHint() {
     hint_index = (hint_index + hint_types.length+1) % hint_types.length;
+    enablePrevNext(hint_index);
     document.getElementById('hintType').textContent = hint_types[hint_index];
     console.log(hints_buffer[hint_types[hint_index]]);
     wrap_worked_example(hints_buffer[hint_types[hint_index]]);
@@ -104,21 +110,25 @@ function wrap_worked_example(worked_example_str) {
     editor.setValue(worked_example_str, -1); // -1 is for moving the cursor to the start
 }
 
-document.getElementById('ask-hint').addEventListener('click', function() {
-    document.getElementById('progressBarContainer').style.display = 'block';
-    var width = 1;
-    var interval = setInterval(frame, 180); // Increase width every 10ms
-    function frame() {
-        if (width >= 100) {
-            clearInterval(interval);
-        } else {
-            width++;
-            document.getElementById('progressBar').style.width = width + '%';
-        }
+function showSpinner() {
+    console.log("showSpinner");
+    document.getElementById("loadingSpinner").style.display = "block";
+}
+
+function hideSpinner() {
+    console.log("hideSpinner");
+    document.getElementById("loadingSpinner").style.display = "none";
+}
+
+function enablePrevNext(hint_index) {
+    if (hint_index == 0) {
+        document.getElementById("prev-hint").disabled = true;
+        document.getElementById("next-hint").disabled = false;
+    } else if (hint_index < 3) {
+        document.getElementById("prev-hint").disabled = false;
+        document.getElementById("next-hint").disabled = false;
+    } else {
+        document.getElementById("prev-hint").disabled = false;
+        document.getElementById("next-hint").disabled = true;
     }
-
-    // Start the AJAX request
-    generateHint();
-});
-
-
+}
