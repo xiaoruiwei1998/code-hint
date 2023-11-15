@@ -26,14 +26,17 @@ with open("./config/llm_config.json", "r") as f:
 
 class Hint(object):
     
-    def __init__(self, problem_desc="", code="", input_data="", output_data="", requirement="multiple_hint_prompt", levels=["orientation", "instrumental", "worked_example", "bottom_out"], constraints=["length", "knowledge"], format="fence", example_user_prompt="", example_feedback=""):
+    def __init__(self, problem_desc="", code="", input_data="", output_data="", requirement="multiple_hint_prompt", levels=["orientation", "instrumental", "worked_example", "bottom_out"], constraints=["length", "knowledge"], format="fence", example_user_prompt="", example_feedback="", subgoals=""):
         
         self.model = llm_config['gpt_config']['model']
         self.code = code
         self.api_key = llm_config['gpt_config']['api_key']
         self.levels = levels
         self.levels_desc = ""
+        self.subgoals = "import csv; open csv file; read csv file into a 2-D list; looping over each line; looping over each column; determine the appropriate data structure (dict) to keep counting; distinguish between success and failure cases and update dict correspondingly; calculate the success rate; using loop to find the maximum success rate; keep record of max rate and company name."
         for i in range(len(self.levels)):
+            if i == 1:
+                self.levels_desc += self.subgoals
             self.levels_desc += "\n" + str(i+1) + ". "
             self.levels_desc += prompt_config['levels'][levels[i]]
             self.levels_desc += "\n"

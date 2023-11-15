@@ -5,7 +5,7 @@
     },
 
     "levels":{
-        "orientation":"in a teaching assistant's tone, identifies which subgoal [import csv; open csv file; read csv file into a 2-D list; looping over each line; looping over each column; string split; count hashtags] the student is currently under, and provide the next step hint. The next-step hint should include at most one incompleted subgoal without any other infomation. The response should be within 10-50 words. Do not list the errors and subgoals directly. ",
+        "orientation":"in a teaching assistant's tone, identifies which subgoal the student is currently under, and provide the next step hint. The next-step hint should include at most one incompleted subgoal without any other infomation. The response should be within 10-50 words. Do not list the errors and subgoals directly. ",
         "instrumental":"describes the first error and the correct way to do it without providing specific solution.  The response should be within 10-50 words. ",
         "worked_example": "points out the first error student needs to correct in one sentence, and provide a similar example in different scenario and variable names in one sentence. The example code should be organized into html code block or in ace editor, and the explanation should be written as in-line comments of code. ALL of this hint should be written in code editor! You must include python code in this step.  The response should be in natural language and within 10-50 words. ",
         "bottom_out":"provides the correct version of code on the line(s) first error occured only. You must include python code in this step. The response should be within 10-50 words. "
@@ -28,7 +28,7 @@
 
     "subgoal-layers":{
         "inst": "Before generating hint, identify which subgoal the student is currently under, and which type of problem it is for the next step. The next-step hint should include at most one incompleted subgoal. Explain the subgoal in each type of hint: ",
-        "subgoals":"import csv; open csv file; read csv file into a 2-D list; looping over each line; looping over each column; string split; count hashtags"
+        "subgoals":"import csv; open csv file; read csv file into a 2-D list; looping over each line; looping over each column; determine the appropriate data structure (dict) to keep counting; distinguish between success and failure cases and update dict correspondingly; calculate the success rate; using loop to find the maximum success rate; keep record of max rate and company name."
     }, 
 
     "prior-knowledge": {

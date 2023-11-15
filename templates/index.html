@@ -13,14 +13,14 @@
     <div class="row">
         <!-- Sidebar -->
         <div id="sidebar" class="col">
-            <h1 class="h2">Tiktok Hashtags</h1>
+            <h1 id="problem-title" class="h2"></h1>
             <div class="container mt-3" id="left-panel">
                 <div><div id="problemdescription"></div>
 <br>Example: 
                 </div>
                 <div class="example-i-o">
-                    <b>Input:</b><br> A csv file: top10videos.csv <br><br>
-                    <b>Output:</b><br> {'#dance': 9, '#viral': 8, '#trending': 3, '#party': 2, '#hiphop': 2, '#duet': 2, '#moves': 2, '#street': 2, '#classic': 2, '#latin': 2, '#salsa': 2, '#beats': 2, '#electro': 1, '#swing': 1, '#fun': 1, '#summer': 1, '#challenge': 1, '#ballet': 1, '#dreams': 1, '#elegance': 1, '#streetdance': 1, '#revolution': 1, '#freestyle': 1, '#vibes': 1, '#fiesta': 1, '#hit': 1, '#groove': 1, '#night': 1, '#retro': 1, '#oldies': 1, '#throwback': 1, '#tapdance': 1, '#tunes': 1, '#rhythm': 1, '#tap': 1, '#urban': 1, '#citylife': 1, '#bollywood': 1, '#bash': 1, '#indian': 1, '#festive': 1, '#colorful': 1}
+                    <b>Input:</b><br><p id="example-input"></p><br><br>
+                    <b>Output:</b><br><p id="example-output"></p>
                 </div>
         </div>
     </div>
@@ -30,12 +30,10 @@
             <!-- Your content goes here -->
             
             <button class="ml-auto" id="run" onclick="runCode()">Run</button>
-            <button class="ml-auto" id="submit" onclick="runCode()">Submit</button>
+            <button class="ml-auto" id="submit" onclick="getProblem()">Submit</button>
             <div class="container-fluid">
                     <div id="leftPane">
-                        <div id="editor" style="height: 300px; width: 700px;">file_path = 'coding_problems/tiktok/top10videos.csv'
-hashtag_count = {}
-print(hashtag_count)</div>
+                        <div id="editor" style="height: 250px; width: 700px;"></div>
                     </div>
                     <div id="problem_info" >
                             <!-- Nav tabs -->
@@ -63,20 +61,20 @@ print(hashtag_count)</div>
                                     </div>
                                     <div>
                                         <b>Correct Output:</b>
-                                        <div id="correct-output">{'#dance': 9, '#viral': 8, '#trending': 3, '#party': 2, '#hiphop': 2, '#duet': 2, '#moves': 2, '#street': 2, '#classic': 2, '#latin': 2, '#salsa': 2, '#beats': 2, '#electro': 1, '#swing': 1, '#fun': 1, '#summer': 1, '#challenge': 1, '#ballet': 1, '#dreams': 1, '#elegance': 1, '#streetdance': 1, '#revolution': 1, '#freestyle': 1, '#vibes': 1, '#fiesta': 1, '#hit': 1, '#groove': 1, '#night': 1, '#retro': 1, '#oldies': 1, '#throwback': 1, '#tapdance': 1, '#tunes': 1, '#rhythm': 1, '#tap': 1, '#urban': 1, '#citylife': 1, '#bollywood': 1, '#bash': 1, '#indian': 1, '#festive': 1, '#colorful': 1}</div>
+                                        <div id="correct-output"></div>
                                     </div>
                                 </div>
                                 <div id="hints" class="container tab-pane fade"><br>
-                                    <h5 id="hintType">Generate a hint for the next step: We provide three hints for each attempt.</h5>
+                                    <h5 id="hintType">Generate a hint to help you move forward: We provide three types of hints for each attempt.</h5>
                                     <div id="loadingSpinner" class="spinner" style="display:none;"></div>
                                     <div id="hintOutput">
                                         <div id="worked_example_editor" style="height: 200px; width: 700px;" class=" ace_editor ace_hidpi ace-tm"></div>
                                     </div>
 
                                     <div class="row">
-                                        <button class="col hint-button" id="prev-hint" onclick="getPrevHint()">Previous</button>
+                                        <button class="col hint-button" id="prev-hint" onclick="getPrevHint()" disabled>Previous</button>
                                         <button class="col hint-button" id="ask-hint" onclick="generateHint()">New Hint</button>
-                                        <button class="col hint-button" id="next-hint" onclick="getNextHint()">Next</button>
+                                        <button class="col hint-button" id="next-hint" onclick="getNextHint()" disabled>Next</button>
                                     </div>
                                 </div>
                             </div>

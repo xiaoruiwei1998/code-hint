@@ -1,0 +1,33 @@
+import sqlite3
+
+conn = sqlite3.connect("./db/code_hints.db")
+
+conn.execute('''
+CREATE TABLE PROBLEMS (
+    PROBLEM_ID INTEGER PRIMARY KEY NOT NULL,
+    PROBLEM_DESC TEXT,
+    CODE TEXT,
+    INPUTS TEXT,
+    OUTPUTS TEXT,
+    EXAMPLE_USER_PROMPT TEXT,
+    EXAMPLE_FEEDBACK TEXT
+);
+''')
+
+conn.execute('''
+CREATE TABLE LOGS (
+    STU_ID INTEGER,
+    PROBLEM_ID INTEGER,
+    CODE TEXT,
+    EVENT_TYPE TEXT,
+    EVENT_TIME DATETIME,
+    EVENT_LOG TEXT,
+    FOREIGN KEY(PROBLEM_ID) REFERENCES PROBLEMS(PROBLEM_ID)
+);
+''')
+
+
+
+
+        
+            
