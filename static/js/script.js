@@ -21,11 +21,6 @@ function runCode() {
     .then(data => {
         document.getElementById("output").textContent = data.output;
         document.getElementById("student-output").textContent = data.output;
-        if (document.getElementById("student-output").textContent == document.getElementById("correct-output").textContent) {
-            document.getElementById("submit").disabled = false;
-        } else {
-            document.getElementById("submit").disabled = true;
-        }
     })
     .catch(error => {
         console.error('Error:', error);
@@ -54,13 +49,17 @@ function getProblem() {
         document.getElementById('example-input').textContent = problem_info['input'];
         document.getElementById('example-output').textContent = problem_info['output'];
         document.getElementById('correct-output').textContent = problem_info['output'];
+
+        if (problem_idx >= 4) {
+            document.getElementById("submit").disabled = true;
+        } else {
+            document.getElementById("submit").disabled = false;
+            problem_idx = problem_idx + 1;
+        }
     })
     .catch(error => {
         console.error('Error fetching hint:', error);
     });
-    if (problem_idx<4) {
-        problem_idx = problem_idx + 1;
-    }
 }
 
 function generateHint() {
