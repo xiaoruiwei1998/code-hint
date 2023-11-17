@@ -5,7 +5,9 @@ import subprocess
 import openai
 from models.hint import Hint
 from models.problem import Problem
+from models.log import Log
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 problem = Problem()
 app = Flask(__name__)
@@ -16,7 +18,6 @@ db = SQLAlchemy(app)
 
 import sqlite3
 
-conn = sqlite3.connect("./db/problems_db.sqlite", check_same_thread=False)
     
     
 @app.route('/')
@@ -48,6 +49,8 @@ def get_hint():
     
 @app.route('/get_problem', methods=['POST'])
 def get_problem():
+    
+    conn = sqlite3.connect("./db/problems_db.sqlite", check_same_thread=False)
     problem_idx = request.json.get('idx')
     problem = Problem()
     cursor = conn.cursor()
@@ -58,6 +61,20 @@ def get_problem():
     else:
         return jsonify({"error": "Failed to get hint"}), 500
         
+@app.route('/log_event', methods=['POST'])
+def log_event(): 
+    print(request.json)
+    pid = request.json.get('pid')
+    sid = request.json.get('sid')
+    code = request.json.get('code')
+    event_type = request.json.get('event_type')
+    event_time = request.json.get('timestamp')
+    event_log = request.json.get('event_log')
+        # problem_idx, sid: 1, code:code, event_log:event_log, timestamp: Date.now()
+    log = Log(sid, pid, code, event_type, event_time, event_log)
+    conn = sqlite3.connect("./db/problems_db.sqlite", check_same_thread=False)
+    log.write_to_db(conn)
+    return jsonify({"status": "success"})
 
 if __name__ == '__main__':
     app.run(debug=True)

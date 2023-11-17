@@ -128,3 +128,14 @@ button:disabled {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+#hint-evaluation {
+    width: 20%;
+    position: relative;
+    left: 40%;
+}
+
+#survey {
+    background-color: #f5f5f5;
+    padding: 1%;
+}
