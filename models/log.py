@@ -16,7 +16,7 @@ class Log(object):
         self.code = code
         self.event_type = event_type
         self.event_time = event_time
-        self.event_log = event_log
+        self.event_log = str(event_log)
     
  
     

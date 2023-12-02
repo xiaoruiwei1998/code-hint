@@ -7,8 +7,8 @@
     "levels":{
         "orientation":"in a teaching assistant's tone, identifies which subgoal the student is currently under, and provide the next step hint. The next-step hint should include at most one incompleted subgoal without any other infomation. The response should be within 10-50 words. Do not list the errors and subgoals directly. ",
         "instrumental":"describes the first error and the correct way to do it without providing specific solution.  The response should be within 10-50 words. ",
-        "worked_example": "points out the first error student needs to correct in one sentence, and provide a similar example in different scenario and variable names in one sentence. The example code should be organized into html code block or in ace editor, and the explanation should be written as in-line comments of code. ALL of this hint should be written in code editor! You must include python code in this step.  The response should be in natural language and within 10-50 words. ",
-        "bottom_out":"provides the correct version of code on the line(s) first error occured only. You must include python code in this step. The response should be within 10-50 words. "
+        "worked_example": "provides a similar example code in different scenario and variable names similar to the student's current code but can solve this problem. The example code should be organized into html code block or in ace editor, and the explanation should be written as in-line comments of code. ALL of this hint should be written in code editor! You must include python code in this step. If the error is related to file read, provide the code from: import csv to csv_data = list(reader). Assuming file_path string or best_sellers, import will always work and do not correct errors related to them. Do not use with open syntax, just use f = open(file_path, \"r\")",
+        "bottom_out":"provides the correct version of code on the line(s) first error occured only. You must include python code in this step.The code should be similar to the worked example hint code regarding the content and has the exactly same number of lines."
     },
     
     "constraints":{

@@ -34,6 +34,8 @@ button:disabled {
 
 #submit:disabled{
     background-color: rgb(239, 239, 239);
+    padding: 2%;
+    margin: 5%;
 }
 
 .example-i-o {
@@ -135,7 +137,8 @@ button:disabled {
     left: 40%;
 }
 
-#survey {
+form {
     background-color: #f5f5f5;
     padding: 1%;
+    margin-left: 4%;
 }

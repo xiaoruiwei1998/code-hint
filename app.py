@@ -16,6 +16,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+hint_type= "multilevel"
+# hint_type= "summative"
+
 import sqlite3
 
     
@@ -39,11 +42,11 @@ def run_code():
 def get_hint():
     problem_desc = request.json.get('problemDesc')
     code = request.json.get('code')
-    hint = Hint(problem_desc=problem_desc, code=code, input_data=problem.input, output_data=problem.output, example_user_prompt=problem.example_user_prompt, example_feedback=problem.example_feedback)
+    hint = Hint(problem_desc=problem_desc, code=code, input_data=problem.input, output_data=problem.output, example_user_prompt=problem.example_user_prompt, example_feedback=problem.example_feedback, hint_type=hint_type)
     print(hint)
     response = hint.generateGPTAnswer()
     if response:
-        return jsonify(hints = response)
+        return jsonify(hints=response, hint_type=hint_type)
     else:
         return jsonify({"error": "Failed to get hint"}), 500
     

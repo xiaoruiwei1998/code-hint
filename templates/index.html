@@ -23,6 +23,54 @@
                     <b>Output:</b><br><p id="example-output"></p>
                 </div>
         </div>
+
+        <form id="understanding">  
+            <div class="row" id="survey">
+                <label for="question">1. I can <b>understand</b> what this hint is talking about.</label><br>
+                <div class="col">
+                    <input type="radio" id="strongly-disagree-understanding" name="satisfaction" value="1"><br>
+                    <label for="strongly-disagree">Strongly Disagree</label>
+                </div>
+                <div class="col">
+                    <input type="radio" id="disagree-understanding" name="satisfaction" value="2">
+                </div>
+                <div class="col">
+                    <input type="radio" id="neutral-understanding" name="satisfaction" value="3"><br>
+                    <label for="neutral">Neutral</label>
+                </div>
+                <div class="col">
+                    <input type="radio" id="agree-understanding" name="satisfaction" value="4">
+                </div>
+                <div class="col">
+                    <input type="radio" id="strongly-agree-understanding" name="satisfaction" value="5"><br>
+                    <label for="strongly-agree">Strongly Agree</label><br>
+                </div>
+            </div>
+        </form>
+
+        <form id="helpfulness">  
+            <div class="row" id="survey">
+                <label for="question">2. Using the hint helps me <b>proceed to the next step</b>.</label><br>
+                <div class="col">
+                    <input type="radio" id="strongly-disagree-helpfulness" name="satisfaction" value="1"><br>
+                    <label for="strongly-disagree">Strongly Disagree</label>
+                </div>
+                <div class="col">
+                    <input type="radio" id="disagree-helpfulness" name="satisfaction" value="2">
+                </div>
+                <div class="col">
+                    <input type="radio" id="neutral-helpfulness" name="satisfaction" value="3"><br>
+                    <label for="neutral">Neutral</label>
+                </div>
+                <div class="col">
+                    <input type="radio" id="agree-helpfulness" name="satisfaction" value="4">
+                </div>
+                <div class="col">
+                    <input type="radio" id="strongly-agree-helpfulness" name="satisfaction" value="5"><br>
+                    <label for="strongly-agree">Strongly Agree</label><br>
+                </div>
+            </div>
+        </form>
     </div>
 
         <!-- Content -->
@@ -33,7 +81,7 @@
             <button class="ml-auto" id="submit" onclick="getProblem()">Next Question</button>
             <div class="container-fluid">
                     <div id="leftPane">
-                        <div id="editor" style="height: 250px; width: 700px;"></div>
+                        <div id="editor" style="height: 300px; width: 700px;"></div>
                     </div>
                     <div id="problem_info" >
                             <!-- Nav tabs -->
@@ -68,32 +116,9 @@
                                     <h5 id="hintType">Generate a hint to help you move forward: We provide three types of hints for each attempt.</h5>
                                     <div id="loadingSpinner" class="spinner" style="display:none;"></div>
                                     <div id="hintOutput">
-                                        <div id="worked_example_editor" style="height: 200px; width: 700px;" class=" ace_editor ace_hidpi ace-tm"></div>
+                                        <div id="worked_example_editor" style="height: 300px; width: 700px;" class=" ace_editor ace_hidpi ace-tm"></div>
                                     </div>
-                                    <form >
-                                        
-                                    <div class="row" id="survey">
-                                        <label for="question">How helpful is this hint?</label><br>
-                                        <div class="col">
-                                            <input type="radio" id="strongly-disagree" name="satisfaction" value="1"><br>
-                                            <label for="strongly-disagree">Make things worse</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="radio" id="disagree" name="satisfaction" value="2">
-                                        </div>
-                                        <div class="col">
-                                            <input type="radio" id="neutral" name="satisfaction" value="3"><br>
-                                            <label for="neutral">Not helpful</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="radio" id="agree" name="satisfaction" value="4">
-                                        </div>
-                                        <div class="col">
-                                            <input type="radio" id="strongly-agree" name="satisfaction" value="5"><br>
-                                            <label for="strongly-agree">Very helpful</label><br>
-                                        </div>
-                                    </div>
-                                    </form>
+                                    
 
                                     <div class="row">
                                         <button class="col hint-button" id="prev-hint" onclick="getPrevHint()" disabled>Previous</button>

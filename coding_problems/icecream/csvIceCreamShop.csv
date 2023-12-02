@@ -1,11 +1,10 @@
-,Flavor 1, Flavor 2, Flavor 3
-1,,,
-2,Vanilla,Chocolate,Strawberry
-3,Mint Chocolate Chip,Cookies and Cream,Chocolate Chip Cookie Dough
-4,Butter Pecan,Rocky Road,Neapolitan
-5,Coffee,Vanilla,Chocolate
-6,Strawberry,Mint Chocolate Chip,Cookies and Cream
-7,Chocolate Chip Cookie Dough,Butter Pecan,Rocky Road
-8,Neapolitan,Coffee,Vanilla
-9,Vanilla,Strawberry,Mint Chocolate Chip
-10,Cookies and Cream,Chocolate Chip Cookie Dough,Butter Pecan
+Flavor 1, Flavor 2, Flavor 3
+Vanilla,Chocolate,Strawberry
+Mint Chocolate Chip,Cookies and Cream,Chocolate Chip Cookie Dough
+Butter Pecan,Rocky Road,Neapolitan
+Coffee,Vanilla,Chocolate
+Strawberry,Mint Chocolate Chip,Cookies and Cream
+Chocolate Chip Cookie Dough,Butter Pecan,Rocky Road
+Neapolitan,Coffee,Vanilla
+Vanilla,Strawberry,Mint Chocolate Chip
+Cookies and Cream,Chocolate Chip Cookie Dough,Butter Pecan
